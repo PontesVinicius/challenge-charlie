@@ -1,7 +1,24 @@
 import React from 'react'
 
+import {
+  StyledSearch,
+  StyledSearchDiv
+} from './search.styled'
+
+import CompassIcon from '../../assets/icons/compass'
+
 export default function Search() {
-    return (
-      <h1>Hello from Search</h1>
-    )
+
+  const keyPressed = (e) => {
+    if (e.key === 'Enter') {
+      console.log(e.key)
+    }
+  }
+
+  return (
+    <StyledSearchDiv>
+      <CompassIcon />
+      <StyledSearch onKeyDown={(e) => keyPressed(e)} />
+    </StyledSearchDiv>
+  )
 }
